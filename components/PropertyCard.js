@@ -1,7 +1,15 @@
+import Image from 'next/image';
+
 export default function PropertyCard({ property }) {
   return (
     <div className='propertyCard'>
-      <img src={property.image} alt={property.title} className='propertyImage' />
+      <Image 
+        src={property.image} 
+        alt={property.title} 
+        className='propertyImage'
+        width={300}
+        height={200}
+      />
       <div className='propertyDetails'>
         <h3 className='propertyTitle'>{property.title}</h3>
         <p className='propertyPrice'>{property.price}</p>

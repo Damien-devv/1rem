@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { supabase } from '../../lib/supabase';
 import Navbar from '../../components/Navbar';
 import styles from '../../styles/Home.module.css';
@@ -18,7 +19,7 @@ export default function LandlordDashboard() {
       }
     };
     checkAuth();
-  }, []);
+  }, [router]);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
