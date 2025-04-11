@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Navbar />
-      {/* Hero Section */}
+      <!-- Hero Section -->
       <div className={styles.hero}>
         <h1 className={styles.title}>Easy Rent</h1>
         <p className={styles.subtitle}>Your Modern Rental Solution</p>
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* About Us Section */}
+      <!-- About Us Section -->
       <div className={styles.about}>
         <h2>Our Community Approach</h2>
         <p>
@@ -80,7 +80,7 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* Available Properties Section */}
+      <!-- Available Properties Section -->
       <div className={styles.propertyList}>
         <h1>Available Properties</h1>
         <div className={styles.propertyListContainer}>
@@ -90,7 +90,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Footer */}
+      <!-- Footer -->
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerColumn}>
