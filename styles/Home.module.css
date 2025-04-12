@@ -52,6 +52,7 @@
   background-color: #f8f9fa;
   border-radius: 15px;
   margin-bottom: 40px;
+  max-width: 1200px;
 }
 
 .about h2 {
@@ -60,12 +61,99 @@
   margin-bottom: 20px;
 }
 
+.splitSection {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.splitImage {
+  flex: 1;
+}
+
+.splitText {
+  flex: 1;
+  text-align: left;
+}
+
+.sectionImage {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.fullWidthText {
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+.fullWidthText p {
+  margin-bottom: 30px;
+}
+
+.services {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: white;
+  margin-bottom: 40px;
+}
+
+.services h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.serviceCard {
+  padding: 30px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.serviceCard h3 {
+  margin: 20px 0 15px;
+  color: #3182ce;
+}
+
+.serviceCard p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .about p {
   font-size: 1.1rem;
   color: #666;
-  max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .splitSection {
+    flex-direction: column;
+  }
+  .splitText {
+    text-align: center;
+  }
 }
 
 .footer {
@@ -128,16 +216,6 @@
 
 .socialLinks a:hover {
   color: #4299e1;
-}
-
-.propertyList {
-  margin-bottom: 40px;
-}
-
-.propertyListContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
 }
 
 .dashboardContent {

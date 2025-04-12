@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import PropertyCard from '../components/PropertyCard';
 import Navbar from '../components/Navbar';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { supabase } from '../lib/supabase';
 
@@ -21,38 +21,6 @@ export default function Home() {
     }
     testConnection();
   }, []);
-  const properties = [
-    {
-      id: 1,
-      title: 'Modern Downtown Apartment',
-      price: '$1,500/month',
-      location: 'New York, NY',
-      image: '/apartment1.jpg',
-      bedrooms: 2,
-      bathrooms: 1,
-      size: '850 sqft'
-    },
-    {
-      id: 2,
-      title: 'Cozy Suburban House',
-      price: '$2,200/month',
-      location: 'New Jersey, NJ',
-      image: '/house1.jpg',
-      bedrooms: 3,
-      bathrooms: 2,
-      size: '1,200 sqft'
-    },
-    {
-      id: 3,
-      title: 'Luxury Penthouse',
-      price: '$4,500/month',
-      location: 'Chicago, IL',
-      image: '/penthouse1.jpg',
-      bedrooms: 4,
-      bathrooms: 3,
-      size: '2,500 sqft'
-    }
-  ];
 
   return (
     <div className={styles.container}>
@@ -67,26 +35,96 @@ export default function Home() {
         </div>
       </div>
 
-      {/* About Us Section */}
+      {/* What We Do Section */}
       <div className={styles.about}>
-        <h2>Our Community Approach</h2>
-        <p>
-          Born from personal rental struggles on both sides, Easy Rent is built by real people 
-          for real people. We're not a faceless corporation - we're a community working together 
-          to fix the frustrations of renting in 2025.
-        </p>
-        <Link href="/about" className={styles.ctaButton} style={{marginTop: '1rem'}}>
-          Read Our Full Story
-        </Link>
+        <h2>What We Do</h2>
+        
+        {/* First Section - Image Left, Text Right */}
+        <div className={styles.splitSection}>
+          <div className={styles.splitImage}>
+            <Image 
+              src="/apartment1.jpg" 
+              alt="Rental challenges"
+              width={500}
+              height={350}
+              className={styles.sectionImage}
+            />
+          </div>
+          <div className={styles.splitText}>
+            <p>
+              Renting doesn't have to be this hard.<br /><br />
+              Outdated listings. Missed visits. Damaged homes. Late payments.<br />
+              Too many people — both tenants and landlords — are left frustrated by a broken system.
+            </p>
+          </div>
+        </div>
+
+        {/* Second Section - Image Right, Text Left */}
+        <div className={styles.splitSection}>
+          <div className={styles.splitText}>
+            <p>
+              EasyRent is here to change that.<br /><br />
+              We're building a platform that puts trust, ease, and community at the heart of home rentals.<br />
+              Whether you're looking for a place or listing one, EasyRent helps you find reliable people, 
+              transparent info, and real peace of mind — without the usual stress.
+            </p>
+          </div>
+          <div className={styles.splitImage}>
+            <Image 
+              src="/house1.jpg" 
+              alt="EasyRent solution"
+              width={500}
+              height={350}
+              className={styles.sectionImage}
+            />
+          </div>
+        </div>
+
+        <div className={styles.fullWidthText}>
+          <p>
+            We're not a big company — just a small team who's been through it, and believes in better.<br />
+            Let's make renting simple. Together.
+          </p>
+          <Link href="/about" className={styles.ctaButton} style={{marginTop: '1rem'}}>
+            Read Our Full Story
+          </Link>
+        </div>
       </div>
 
-      {/* Available Properties Section */}
-      <div className={styles.propertyList}>
-        <h1>Available Properties</h1>
-        <div className={styles.propertyListContainer}>
-          {properties.map(property => (
-            <PropertyCard key={property.id} property={property} />
-          ))}
+      {/* Services Section */}
+      <div className={styles.services}>
+        <h2>Our Services</h2>
+        <div className={styles.servicesGrid}>
+          <div className={styles.serviceCard}>
+            <Image 
+              src="/window.svg" 
+              alt="Property Management"
+              width={80}
+              height={80}
+            />
+            <h3>Property Management</h3>
+            <p>Comprehensive tools for landlords to manage properties, tenants, and payments.</p>
+          </div>
+          <div className={styles.serviceCard}>
+            <Image 
+              src="/globe.svg" 
+              alt="Global Listings"
+              width={80}
+              height={80}
+            />
+            <h3>Verified Listings</h3>
+            <p>Only real, available properties with verified details and photos.</p>
+          </div>
+          <div className={styles.serviceCard}>
+            <Image 
+              src="/file.svg" 
+              alt="Digital Contracts"
+              width={80}
+              height={80}
+            />
+            <h3>Digital Contracts</h3>
+            <p>Secure, legally-binding rental agreements signed online.</p>
+          </div>
         </div>
       </div>
 

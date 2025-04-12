@@ -23,7 +23,18 @@
 .brandName {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #3182ce;
+  color: #000;
+  margin-right: 8px;
+}
+
+.betaBadge {
+  background-color: #3182ce;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-self: center;
 }
 
 .navLinks {
