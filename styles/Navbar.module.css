@@ -3,39 +3,44 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: white;
+  background-color: #1E3A8A;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-radius: 12px;
+  margin: 10px;
 }
 
-.logoContainer {
+.brandContainer {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.logo {
-  height: 60px;
+.brandLink {
+  text-decoration: none;
 }
 
 .brandName {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #000;
+  color: #F8F9FA;
   margin-right: 8px;
 }
 
 .betaBadge {
-  background-color: #3182ce;
-  color: white;
+  background-color: #FBBF24;
+  color: #1E3A8A;
   padding: 2px 8px;
   border-radius: 12px;
   font-size: 0.8rem;
   font-weight: bold;
-  align-self: center;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+
 
 .navLinks {
   display: flex;
@@ -43,12 +48,12 @@
 }
 
 .navLink {
-  color: #333;
+  color: #F8F9FA;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .navLink:hover {
-  color: #3182ce;
+  color: #FBBF24;
 }
