@@ -71,8 +71,8 @@ export default function Home() {
           </div>
           <div className={styles.splitImage}>
             <Image 
-              src="/house1.jpg" 
-              alt="EasyRent solution"
+              src="/apartment2.jpg" 
+              alt="Modern apartment"
               width={500}
               height={350}
               className={styles.sectionImage}
