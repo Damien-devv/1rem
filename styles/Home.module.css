@@ -1,6 +1,4 @@
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 20px;
   min-height: 100vh;
   display: flex;
@@ -8,11 +6,36 @@
 }
 
 .hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #F8F9FA, #E5E7EB);
-  border-radius: 15px;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
   margin-bottom: 40px;
+  width: 100%;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.heroText {
+  text-align: center;
+}
+
+.listProperties {
+  font-size: 2rem;
+  color: #1E3A8A;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    flex-direction: column;
+  }
+  .heroImage {
+    order: -1;
+    margin-bottom: 30px;
+  }
 }
 
 .title {
@@ -25,12 +48,129 @@
   font-size: 1.5rem;
   color: #666;
   margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.ctaContainer {
+.searchContainer {
   display: flex;
   justify-content: center;
   gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+.searchButton {
+  padding: 12px 25px;
+  background-color: #1E3A8A;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #2c5282;
+}
+
+.landlords {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.landlordsContent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.landlordsText {
+  flex: 1;
+  text-align: left;
+}
+
+.landlordsImage {
+  flex: 1;
+}
+
+.landlords h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.landlords p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.tenants {
+  padding: 60px 20px;
+  background-color: #f0f7ff;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.tenantsContent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.tenantsText {
+  flex: 1;
+  text-align: right;
+}
+
+.tenantsImage {
+  flex: 1;
+}
+
+.tenants h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tenants p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .landlordsContent {
+    flex-direction: column;
+  }
+  .landlordsImage {
+    order: -1;
+    margin-bottom: 30px;
+  }
+  .tenantsContent {
+    flex-direction: column;
+  }
+  .tenantsImage {
+    order: -1;
+    margin-bottom: 30px;
+  }
 }
 
 .ctaButton {
@@ -54,29 +194,6 @@
   margin-bottom: 40px;
   max-width: 1200px;
 }
-
-.about h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.splitSection {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin: 40px 0;
-}
-
-.splitImage {
-  flex: 1;
-}
-
-.splitText {
-  flex: 1;
-  text-align: left;
-}
-
 .sectionImage {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);

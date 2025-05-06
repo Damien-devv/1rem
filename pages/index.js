@@ -27,11 +27,63 @@ export default function Home() {
       <Navbar />
       {/* Hero Section */}
       <div className={styles.hero}>
-        <h1 className={styles.title}>Easy Rent</h1>
-        <p className={styles.subtitle}>Your Modern Rental Solution</p>
-        <div className={styles.ctaContainer}>
-          <Link href='/signup?type=tenant' className={styles.ctaButton}>I am a Tenant</Link>
-          <Link href='/signup?type=landlord' className={styles.ctaButton}>I am a Landlord</Link>
+        <div className={styles.heroContent}>
+          <div className={styles.heroText}>
+            <h1 className={styles.title}>Easy Rent</h1>
+            <p className={styles.subtitle}>Find your perfect rental</p>
+            <h2 className={styles.listProperties}>List your properties</h2>
+            <div className={styles.searchContainer}>
+              <input 
+                type="text" 
+                placeholder="Search by location, price, or property type..."
+                className={styles.searchInput}
+              />
+              <button className={styles.searchButton}>Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* For Landlords Section */}
+      <div className={styles.landlords}>
+        <div className={styles.landlordsContent}>
+          <div className={styles.landlordsText}>
+            <h2>For Landlords</h2>
+            <p>
+              List your properties. We find you tenants and help with referencing, contracts and more if you need it. 
+              Easy Rent gives you the best possible chance of finding your ideal tenant while you stay in control.
+            </p>
+          </div>
+          <div className={styles.landlordsImage}>
+            <Image 
+              src="/apartment1.jpg" 
+              alt="Modern apartment listing"
+              width={500}
+              height={350}
+              className={styles.sectionImage}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* For Tenants Section */}
+      <div className={styles.tenants}>
+        <div className={styles.tenantsContent}>
+          <div className={styles.tenantsImage}>
+            <Image 
+              src="/apartment1.jpg" 
+              alt="Happy tenant"
+              width={500}
+              height={350}
+              className={styles.sectionImage}
+            />
+          </div>
+          <div className={styles.tenantsText}>
+            <h2>For Tenants</h2>
+            <p>
+              Find your next home. On EasyRent, there are never any admin fees. Ever. We take down listings as soon as they are let so no more ghost adverts. And we'll protect your deposit and your rent money.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -71,8 +123,8 @@ export default function Home() {
           </div>
           <div className={styles.splitImage}>
             <Image 
-              src="/apartment2.jpg" 
-              alt="Modern apartment"
+              src="/apartment1.jpg" 
+              alt="Modern apartment interior"
               width={500}
               height={350}
               className={styles.sectionImage}
