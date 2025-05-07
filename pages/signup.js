@@ -38,11 +38,11 @@ export default function Signup() {
 
       if (signupError) throw signupError;
 
-      // Redirect based on user type
-      if (userType === 'tenant') {
-        router.push('/tenant/dashboard');
+      if (userType === 'landlord') {
+        router.push('/landlord/new-listing');
       } else {
-        router.push('/landlord/dashboard');
+        // Show success message for tenants
+        alert('Please check your email for a confirmation link. You can sign in after confirming your email.');
       }
     } catch (err) {
       setError(err.message);

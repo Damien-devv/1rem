@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { supabase } from '../../lib/supabase';
 import Navbar from '../../components/Navbar';
 import styles from '../../styles/Home.module.css';
+import buttonStyles from '../../styles/LandlordButtons.module.css';
 
 export default function LandlordDashboard() {
   const router = useRouter();
@@ -21,6 +22,28 @@ export default function LandlordDashboard() {
     checkAuth();
   }, [router]);
 
+  const [listings, setListings] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchListings = async () => {
+      setLoading(true);
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (user) {
+        const { data, error } = await supabase
+          .from('listings')
+          .select('*')
+          .eq('landlord_id', user.id);
+
+        if (!error) setListings(data || []);
+      }
+      setLoading(false);
+    };
+
+    fetchListings();
+  }, []);
+
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.push('/');
@@ -35,28 +58,39 @@ export default function LandlordDashboard() {
         <p className={styles.subtitle}>Manage your rental properties</p>
         
         <div className={styles.dashboardContent}>
-          <div className={styles.dashboardCard}>
+          <div className={styles.listingsHeader}>
             <h2>Your Listings</h2>
-            <p>Manage your property listings</p>
-          </div>
-          
-          <div className={styles.dashboardCard}>
-            <h2>Tenant Management</h2>
-            <p>View and communicate with tenants</p>
-          </div>
-          
-          <div className={styles.dashboardCard}>
-            <h2>Rent Collection</h2>
-            <p>Track payments and invoices</p>
+            <Link href="/landlord/new-listing" className={buttonStyles.button}>
+              Add New Listing
+            </Link>
           </div>
 
-          <div className={styles.dashboardCard}>
-            <h2>Maintenance Requests</h2>
-            <p>Review and address tenant requests</p>
-          </div>
+          {loading ? (
+            <p>Loading listings...</p>
+          ) : listings.length > 0 ? (
+            <div className={styles.listingsGrid}>
+              {listings.map((listing) => (
+                <div key={listing.id} className={styles.listingCard}>
+                  {listing.images?.[0] && (
+                    <img 
+                      src={listing.images[0]} 
+                      alt={listing.description} 
+                      className={styles.listingImage}
+                    />
+                  )}
+                  <div className={styles.listingDetails}>
+                    <h3>${listing.price}/month</h3>
+                    <p>{listing.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p>No listings yet. Add your first property!</p>
+          )}
         </div>
 
-        <button onClick={handleLogout} className={styles.ctaButton}>
+        <button onClick={handleLogout} className={buttonStyles.button}>
           Log Out
         </button>
       </div>

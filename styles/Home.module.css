@@ -1,4 +1,4 @@
-.container {
+ t.container {
   padding: 20px;
   min-height: 100vh;
   display: flex;
@@ -427,4 +427,180 @@
 .userTypeToggle .activeToggle {
   background: #1E3A8A;
   color: white;
+}
+
+/* Navbar Brand Styles */
+.brandLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brandName {
+  font-size: 2rem;
+  font-family: 'Chronica Pro Medium', sans-serif;
+  color: #1E3A8A;
+}
+
+/* Onboarding Styles */
+.onboardingContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.onboardingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.onboardingMain {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.onboardingFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #e2e8f0;
+  background: white;
+}
+
+.onboardingContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  max-width: 800px;
+  gap: 0.5rem;
+  font-family: 'Chronica Pro Medium', sans-serif;
+  min-height: 60vh;
+  justify-content: center;
+}
+
+.onboardingContent h1, 
+.onboardingContent h2,
+.onboardingContent h3 {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.onboardingContent h3 {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.onboardingContent label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.onboardingContent input,
+.onboardingContent textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.onboardingContent textarea {
+  min-height: 150px;
+}
+
+.saveExitButton {
+  background: none;
+  border: none;
+  color: #1E3A8A;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.65rem 1.3rem;
+  font-size: 1.15rem;
+  font-family: 'Chronica Pro Medium', sans-serif;
+}
+
+.saveExitButton:hover {
+  text-decoration: underline;
+}
+
+.backButton {
+  background: #f1f5f9;
+  color: #94a3b8;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  cursor: not-allowed;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-family: 'Chronica Pro Medium', sans-serif;
+}
+
+.backButton:not(.disabledButton) {
+  background: #e2e8f0;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.disabledButton {
+  opacity: 0.7;
+}
+
+.nextButton,
+.submitButton {
+  background: #1E3A8A;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-family: 'Chronica Pro Medium', sans-serif;
+}
+
+.nextButton:hover,
+.submitButton:hover {
+  background: #2c5282;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.thumbnail {
+  position: relative;
+  padding-top: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
